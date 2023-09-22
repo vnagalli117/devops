@@ -1,0 +1,57 @@
+GIT: 
+
+Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers who are collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows thousands of parallel branches running on different computers.
+
+Git is open-source software that is easy to handle and perform work on various projects.
+
+HISTORY:
+
+Git development was started by Torvalds in April 2005 when the property source-control management (SCM) system used for Linux kernel development since 2002, Bit Keeper, revoked its free license for Linux development. The copyright holder of Bit Keeper, Larry McVoy, claimed that Andrew Tridgell had created Source Puller by reverse engineering the Bit Keeper protocols. The same incident also spurred the creation of another version-control system, Mercurial.
+
+GIT Features:
+
+Distributed system
+Compatibility
+Non-linear development
+Branching
+Lightweight
+Speed
+Reliable
+Secure
+
+Distributed System: 
+    Distributed systems are those which allow the users to perform work on a project from all over the world. A distributed system holds a Central repository that can be accessed by many remote collaborators by using a Version Control System(VCS).
+
+Compatibility: 
+            Git is compatible with all the Operating Systems that are being used these days. Git repositories can also access the repositories of other Version Control Systems like SVN, CVK, etc. Git can directly access the remote repositories created by these SVNs.
+
+Non-linear development: 
+        Git supports rapid branching and merging and includes specific tools for visualizing and navigating a non-linear development history.
+
+Branching: 
+     Git allows its users to work on a line that runs parallel to the main project files. These lines are called branches. Branches in Git provide a feature to make changes in the project without affecting the original version.
+
+Lightweight: 
+           Git stores all the data from the central repository onto the local repository while cloning is done. There might be hundreds of users working on the same project and hence the data in the central repository might be very huge.
+
+Speed: 
+  Since Git stores all the data related to a project in the local repository by the process of cloning, it is very much efficient to fetch data from the local repository instead of doing the same from the remote repository. Git is very fast and scalable compared to other version control systems which results in the handling of large projects efficiently.
+
+Reliable: 
+   Providing a central repository that is being cloned each time a User performs the Pull operation, the data of the central repository is always being backed up in every collaborator’s local repository. Hence, in the event of crashing of the central server, the data will never be lost as it can be gained back easily by any of the developer’s local machine.
+
+Secure:
+           Git keeps a record of all the commits done by each of the collaborators on the local copy of the developer. A log file is maintained and is pushed to the central repository each time the push operation is performed.
+ Git uses SHA1 to store all the records in the form of objects in the Hash. Each object collaborates with each other with the use of these Hash keys. SHA1 is a cryptographic algorithm that converts the commit object into a 14-digit Hex code.
+
+Topics:
+Version control system
+Git installation & setup environment
+Git Architecture or index
+How to use the git
+Branching
+Merging
+Commit
+Push and pull
+Clone repository
+rebase
