@@ -5,6 +5,8 @@ docker system info--------->Lists data about your Docker environment, including 
 docker help------->View the help index, a reference of all the supported commands.
 docker <command> --help--------->View the help information about a particular command, including detailed information on the supported option flags.
 press ctrl+pq-----------> come out from the container.
+docker system prune -a ------------> clean all.
+docker system prune -f ------------> removing all unused.
 
 Build Images
 ---------------
@@ -34,6 +36,7 @@ docker run -p 8080:80 example-image:latest --------> Bind port 8080 on your Dock
 docker run -v /host-directory:/container-directory example-image:latest -----------> Bind mount /host-directory on your host to /container-directory inside the container. The directory’s contents will be visible on both sides of the mount.
 docker run -v data:/data example-image:latest ---------> Mount the named Docker volume called data to /data inside the container.
 docker run --network my-network example-image:latest ----------> Connect the new container to the Docker network called my-network.
+docker run -p <host_port>:<container_port> image_name -----------> Run a container with and publish a container’s port(s) to the host.
 docker run --restart unless-stopped example-image:latest --------> Set the container to start automatically when the Docker daemon starts, unless the container has been manually stopped. Other restart policies are also supported.
 docker run --privileged example-image:latest ---------> Run the container with privileged access to the host system. This should usually be disabled to maintain security.
 -----------------------------
@@ -54,7 +57,7 @@ docker start <container> --------> Start a previously stopped container.
 docker rm <container> -----------> Delete a container by its ID or name. Use the -f (force) flag to delete a container that’s currently running.
 docker container status----------->it shows all container.
 docker logs -f ------------> fetch and follow the logs of a container.
-docker run -p <host_port>:<container_port> image_name -----------> Run a container with and publish a container’s port(s) to the host.
+
 ----------------------------------------------------
 Copy to and From Containers
 -----------------------------------------
@@ -113,39 +116,42 @@ docker volume create my-volume – Create a new named volume called my-volume.
 docker volume ls – List the volumes present on your host.
 docker volume rm – Delete a volume, which will destroy the data within it. The volume must not be used by any container
 docker volume prune -----> remove all unused local volume.
-docker volume inspect ---------> it will display detailed information one or more.
-docker run --mount source=volume_name destination=path_in_container image_name-----------> mounting a data volume
+docker volume inspect ---------> it will display detailed information on one or more.
+docker run --mount source=volume_name destination=path_in_container image_name-----------> mounting a data volume.
+---------------------------------
+Scan for Vulnerabilities
+----------------------------------
+Docker also has a built-in image vulnerability scanner that’s powered by Snyk:
 
+docker scan example-image:latest -----> Scan for vulnerabilities in the image tagged example-image:latest. The results will be shown in your terminal.
 
+docker scan example-image:latest --file Dockerfile ------> The --file argument supplies the path to the Dockerfile that was used to build the image. When the Dockerfile is available, more detailed vulnerability information is produced.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Docker login 
--------------------
+docker scan example-image:latest --severity high ------> Only report vulnerabilities that are high severity or higher. The --severity flag also supports low and medium values.
+-------------------------------------------
+Docker Hub Account
+------------------------------
 docker login -u username-------->Login to a registry
 docker logout------->Logout from the registry
 ---------------------------
+Clean Up Unused Resources
+-------------------------------
+docker system prune ------> Removes unused data, including dangling image layers (images with no tags).
 
+docker system prune -a ---------> Extends the prune process by deleting all unused images, instead of only dangling ones.
 
+docker system prune --volumes ----------> Includes volume data in the prune process. This will delete any volumes that aren’t used by a container.
 
-docker images commands
---------------------------
+docker image prune ---------> Removes dangling images, without affecting any other types of data.
 
-docker image pull <image_name>----------->pushing an image
-docker image push <username of registry:image name:tag>
+docker image prune -a ----------> Removes all unused images.
+
+docker network prune ---------> Removes unused networks.
+
+docker volume prune ------> Removes unused volumes.
+
+docker system df --------> Reports your Docker installation’s total disk usage.
+---------------------------------------
 
 
 
