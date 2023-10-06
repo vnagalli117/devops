@@ -62,4 +62,13 @@ Terraform Cloud
 ---------------------------------
 terraform login -------> obtain and save API token for Terraform cloud
 terraform logout ------>Log out of Terraform Cloud, defaults to hostname app.terraform.io
+--------------------------------------
+terraform debug commands
+---------------------------------
+
+export TF_LOG=trace ------------> Enables detailed logs to appear on stderr which is useful for debugging.
+export TF_LOG=off -------------> To disable, either unset it.
+export TF_LOG_PATH=./terraform.log(path_name) --------> This specifies where the log should persist its output.
+
+
 
