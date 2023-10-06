@@ -5,8 +5,10 @@ git add.------->Add one or more files to the staging area
 git commit -m “Commit Message”--------->Commit changes to the head but not to the remote repository.
 git status-------->Check the status of your current repository and list the files you have changed.
 git log------->Provides a list of all commits made on a branch
+git show ---> show any object in Git in human-readable format
 git onelog------> one log information
-git diff-------->View the changes you have made to the file
+git diff-------->diff of what is changed but not staged
+git diff --staged ---> diff of what is staged but not yet committed
 git push origin <branch name>------->Push the branch to the remote repository so that others can use it.
 git config --global user.name “Name”------->Tell Git who you are by configuring the author name
 git config --global user.email user@email.com-------->Tell Git who you are by configuring the author email id.
@@ -22,7 +24,7 @@ git pull-------->Update local repository to the newest commit
 git revert <commit_id>------->Revert commit changes
 git clean -n---------->Shows which files would be removed from working directory. Use the -f flag in place of the -n flag to execute the clean.
 git log --summary------------->View changes (detailed)
-git diff HEAD--------->Show difference between working directory and last commit.
+git diff HEAD--------->Show the difference between the working directory and the last commit.
 git log --oneline------->View changes (briefly)
 git reflog------->Show a log of changes to the local repository’s HEAD. Add --relative-date flag to show date info or --all to show all refs.
 git rebase -i <base>-------->Interactively rebase current branch onto <base>. Launches editor to enter commands for how each commit will be transferred to the new base.
@@ -31,14 +33,16 @@ git rm -r [File_name]------>Remove a file (or folder)
 git config --list-------->List all variables set in config file, along with their values
 git branch -d <local_branch>------->Delete local branch in Git
 git push -d <remote_name> <branch_name>---------->Delete remote branch in Git
-git stash pop-------->Unstash the changes
 git commit -am----->The -am along with the command is to write the commit message on the command line for already staged files.
-git commit -ammend--------->The amend is used to edit the last commit. Incase we need to change the last committed message, this command can be used.
-git rm-------->The git rm command is used to remove or delete files from working tree and index.
+git commit -ammend--------->The amend is used to edit the last commit. In case we need to change the last committed message, this command can be used.
+git rm-------->The git rm command is used to remove or delete files from the working tree and index.
 git pull --rebase---------->Git rebase is used to rewrite commits from one branch to another branch.
 git merge --squash----------->The squash along with git merge produces the working tree. It indexes in the same way as that of the real merge, but discards the merge history.
-git revert -e <commit_id>-------->edit the commit mesage before reverting, -e is used for the same.
-git bisect--------->Git bisect goes through all the previous commit and uses binary search to find the bugged commit.
-git blame--------->git blame is used to know who/which commit is responsible for the lastest changes in the repository.
-git cherry-pick---------->Choosing a commit from one branch and applying it to another is known as cherry picking in Git.
+git cherry-pick---------->Choosing a commit from one branch and applying it to another is known as cherry-picking in Git.
+git stash ----> save modified and staged changes
+git stash list -----> list stack order of stashed files changes
+git mv "existing_path" "new_path" ----> change an existing file path and stage the move
+git fetch "alias_name" ----> fetch down all the branches from that Git remote.
+git log branch2..branch1 ---> show the commits on branchA that are not on branchB
+git diff branch2..branch1 ---> show the commits on branchA that are not on branchB
 
