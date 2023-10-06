@@ -19,7 +19,6 @@ git checkout <branch_name>----->Switch from one branch to another
 git merge <branch_name>--------->Merge the branch into the active branch
 git rebase--------->Reapply commits on top of another base tip
 git checkout -b <branch_name>------>Creates a new branch and switch to it
-git stash------->Stash changes into a dirty working directory
 git pull-------->Update local repository to the newest commit
 git revert <commit_id>------->Revert commit changes
 git clean -n---------->Shows which files would be removed from working directory. Use the -f flag in place of the -n flag to execute the clean.
@@ -45,4 +44,5 @@ git mv "existing_path" "new_path" ----> change an existing file path and stage t
 git fetch "alias_name" ----> fetch down all the branches from that Git remote.
 git log branch2..branch1 ---> show the commits on branchA that are not on branchB
 git diff branch2..branch1 ---> show the commits on branchA that are not on branchB
+
 
