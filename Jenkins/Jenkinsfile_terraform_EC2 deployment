@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+    
+    tools {
+        terraform 'terraform'
+    }
+    stages {
+        stage ("checkout from GIT") {
+            steps {
+                git branch: 'master', credentialsId: '3c478daf-763e-4f3f-bdcd-5eda5c15d48b', url: 'https://github.com/venub7/devopsproject.git' ---> please provide your github credentials here
+            }
+        }
+        stage ("terraform init") {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage ("terraform fmt") {
+            steps {
+                sh 'terraform fmt'
+            }
+        }
+        stage ("terraform validate") {
+            steps {
+                sh 'terraform validate'
+            }
+        }
+        stage ("terrafrom plan") {
+            steps {
+                sh 'terraform plan '
+            }
+        }
+        stage ("terraform apply") {
+            steps {
+                sh 'terraform apply --auto-approve'
+            }
+        }
+    }
+}
