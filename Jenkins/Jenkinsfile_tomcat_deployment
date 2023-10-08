@@ -1,3 +1,16 @@
+Links:
+-------------------------------------------
+https://gist.github.com/sampathshivakumar/8776eab425db7e80e745602bdf0a6c9c
+
+https://cscontents.com/jenkins-pipeline-script-to-build-and-deploy-application-on-web-server/
+
+
+
+
+
+
+
+
 pipeline{
   agent any
   stages{
