@@ -1,0 +1,25 @@
+Amazon linux 2 AMI type
+==========================================
+
+Login to server with username and switch to root user
+command : sudo su - 
+Provide the password
+===================
+
+sudo yum update -y --> it will install or updates the patches
+
+sudo amazon-linux-extras install java-openjdk11 -y --> to install the openjdk11
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo --> Install the repo
+
+if wget command not found.Please install the wget software using this command "yum install wget -y"
+
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key --> Import the required key
+
+sudo yum install jenkins -y --> install the jenkins
+
+sudo systemctl enable jenkins --> Enable the jenkins
+
+sudo systemctl start jenkins --> start jenkins
+
+sudo systemctl status jenkins --> check the status of jenkins service
